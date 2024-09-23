@@ -1,17 +1,42 @@
 {
-  "name": "learn-electron",
+  "name": "organize-it-desktop",
   "version": "1.0.0",
   "description": "following electron docs tutorial",
   "main": "main.js",
   "scripts": {
-    "start": "npm run start-vite & wait-on http://localhost:5173 && electron .",
-    "start-vite": "cd organize-it && npm run dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron-forge start",    
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "dev": "npm run start-vite & wait-on http://localhost:5173 && electron .",
+    "start-vite": "cd organize-it && npm run dev"
   },
   "author": "Johnny Milkshakes",
   "license": "MIT",
   "devDependencies": {
+    "@electron-forge/cli": "^7.5.0",
+    "@electron-forge/maker-deb": "^7.5.0",
+    "@electron-forge/maker-rpm": "^7.5.0",
+    "@electron-forge/maker-squirrel": "^7.5.0",
+    "@electron-forge/maker-zip": "^7.5.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.5.0",
+    "@electron-forge/plugin-fuses": "^7.5.0",
+    "@electron/fuses": "^1.8.0",
     "electron": "^32.1.2",
     "wait-on": "^8.0.1"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "./assets/icon",
+        "osx": {
+          "plist": {
+            "CFBundleIconFile": "icon" 
+          }
+        }
+      }
+    }
   }
 }
