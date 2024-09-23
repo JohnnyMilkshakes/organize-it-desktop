@@ -10,7 +10,7 @@ export const getToken = () => {
 let apiUrl;
 
 const apiUrls = {
-  production: "https://organize-it-backend-bce0bc6fbfaf.herokuapp.com/",
+  production: "http://localhost:8000",
   development: "http://localhost:8000",
 };
 
