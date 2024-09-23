@@ -4,7 +4,7 @@
   "description": "following electron docs tutorial",
   "main": "main.js",
   "scripts": {
-    "start": "electron-forge start",    
+    "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "dev": "npm run start-vite & wait-on http://localhost:5173 && electron .",
@@ -25,6 +25,7 @@
     "wait-on": "^8.0.1"
   },
   "dependencies": {
+    "electron-is-dev": "^3.0.1",
     "electron-squirrel-startup": "^1.0.1"
   },
   "config": {
@@ -33,7 +34,7 @@
         "icon": "./assets/icon",
         "osx": {
           "plist": {
-            "CFBundleIconFile": "icon" 
+            "CFBundleIconFile": "icon"
           }
         }
       }

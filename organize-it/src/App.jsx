@@ -18,11 +18,11 @@ const App = () => {
       }
     };
     checkSignedIn();
+
   }, []);
 
   return (
     <Routes>
-      <>
         <Route
           path="/"
           element={<LandingPage isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />}
@@ -30,7 +30,6 @@ const App = () => {
         <Route path="/profile" element={<Profile setIsSignedIn={setIsSignedIn} />} />
         <Route path="/locations/:locationId" element={<Location setIsSignedIn={setIsSignedIn} />} />
         <Route path="/locations/:locationId/items/:itemId" element={<Item setIsSignedIn={setIsSignedIn} />} />
-      </>
     </Routes>
   );
 };
